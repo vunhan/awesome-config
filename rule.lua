@@ -16,6 +16,8 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of last screen
     { rule = { class = "Firefox" },
       properties = { tag = tags[screen.count()][2] } },
+    { rule = { class = "chromium" },
+      properties = { tag = tags[screen.count()][2] } },
     -- Plugin of firefox must be floating window
     { rule = { instance = "plugin-container" },
       properties = { floating = true } },
@@ -25,16 +27,22 @@ awful.rules.rules = {
     -- mpv must be floating window
     { rule = { class = "mpv" },
       properties = { floating = true } },
-    -- Set Steam to always map on tags number 7 of last screen
+    -- Set Steam to always map on tags number 7 of first screen
     { rule = { class = "Steam" },
-      properties = { tag = tags[screen.count()][7] } },
-    -- Set Zim to always map on tags number 6 of last screen
+      properties = { tag = tags[1][7] } },
+    -- Set Zim to always map on tags number 5 of last screen
     { rule = { class = "Zim" },
-      properties = { tag = tags[screen.count()][6] } },
+      properties = { tag = tags[screen.count()][5] } },
     -- Set Desktop of Gnome must be share all workspace
     { rule = { class = "Nautilus", instance = "desktop_window" },
       properties = { sticky = true } },
-    -- Set File manager of Gnome to always map on tags number 8 of last screen
+    -- Set File manager of Gnome to always map on tags number 4 of last screen
     { rule = { class = "Nautilus", instance = "nautilus" },
-      properties = { tag = tags[screen.count()][8] } },
+      properties = { tag = tags[screen.count()][4] } },
+    -- feh must be floating window
+    { rule = { class = "feh" },
+      properties = { floating = true } },
+    -- Set WPS Office to always map on tags number 3 of last screen
+    { rule = { class = "Et" },
+      properties = { tag = tags[screen.count()][3] } },
 }

@@ -51,8 +51,9 @@ redshift.toggle()
 -- }}}
 
 -- {{{ Tags
+tags = {}
 for s = 1, screen.count() do
-    tags[s] = awful.tag(tags.names, s, tags.layout)
+    tags[s] = awful.tag(cyclic(workspace, s).names, s, cyclic(workspace, s).layout)
 end
 -- }}}
 

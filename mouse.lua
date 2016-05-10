@@ -66,7 +66,7 @@ layoutbuttons = awful.util.table.join(
 
 -- {{{ Widget button
 mpdbuttons = awful.util.table.join(
-             awful.button({ }, 1, function () run(music_cmd, screen.count(), 4) end)
+             awful.button({ }, 1, function () run(music_cmd, 1, 4) end)
              )
 -- }}}
 

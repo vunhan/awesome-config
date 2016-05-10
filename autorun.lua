@@ -9,6 +9,7 @@ run_once("pidgin")
 
 -- {{{ Web Browser
 run_once("firefox")
+run_once("chromium")
 -- }}}
 
 -- {{{ Clipboard
