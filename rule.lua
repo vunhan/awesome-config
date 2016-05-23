@@ -15,7 +15,7 @@ awful.rules.rules = {
       properties = { opacity = 0.1 } },
     -- Set Firefox to always map on tags number 2 of last screen
     { rule = { class = "Firefox" },
-      properties = { tag = tags[screen.count()][2] } },
+      properties = { tag = tags[1][2] } },
     { rule = { class = "chromium" },
       properties = { tag = tags[screen.count()][2] } },
     -- Plugin of firefox must be floating window
