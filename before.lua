@@ -3,8 +3,8 @@
 run_once("unclutter")
 -- }}}
 
--- {{{ Chat IRC
-run_once("pidgin")
+-- {{{ Chat
+run_once("franz")
 -- }}}
 
 -- {{{ Web Browser
@@ -20,7 +20,7 @@ run_once("clipit")
 run_once("uim-systray")
 -- }}}
 
--- {{{ Urxvt
+--{{{ Urxvt
 run_once("urxvtd", "-o -q -f")
 run_once("urxvtc")
 -- }}}
@@ -35,4 +35,8 @@ run_once("compton")
 
 -- {{{ Note
 run_once("zim")
+-- }}}
+
+-- {{{ Dev docs
+run_once("zeal")
 -- }}}

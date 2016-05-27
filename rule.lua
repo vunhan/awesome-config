@@ -45,4 +45,10 @@ awful.rules.rules = {
     -- Set WPS Office to always map on tags number 2 of last screen
     { rule = { class = "Et" },
       properties = { tag = tags[screen.count()][2] } },
+    -- Set Franz to always maps on tags number 5 of first screen
+    { rule = { class = "Franz" },
+      properties = { tag = tags[1][5] } },
+    -- Set Zeal to always maps on tags number 6 of first screen
+    { rule = { class = "Zeal" },
+      properties = { tag = tags[1][6] } },
 }
