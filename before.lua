@@ -20,9 +20,9 @@ run_once("clipit")
 run_once("uim-systray")
 -- }}}
 
---{{{ Urxvt
+-- {{{ Urxvt
 run_once("urxvtd", "-o -q -f")
-run_once("urxvtc")
+run_once("urxvtc", tmux, "tmux")
 -- }}}
 
 -- {{{ Mpd
