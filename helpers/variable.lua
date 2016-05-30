@@ -58,8 +58,8 @@ workspace = {
         layout = { layouts[3], layouts[2], layouts[5], layouts[1], layouts[3], layouts[4], layouts[3], layouts[4], layouts[5]}
     },
     {
-        names = { "WORK", "SPEC", "FILE", "NOTE"},
-        layout = { layouts[4], layouts[5], layouts[3], layouts[3]}
+        names = { "WORK", "GAME","SPEC", "FILE", "NOTE"},
+        layout = { layouts[3], layouts[4], layouts[5], layouts[3], layouts[3]}
     }
 }
 
