@@ -51,4 +51,7 @@ awful.rules.rules = {
     -- Set Zeal to always maps on tags number 6 of first screen
     { rule = { class = "Zeal" },
       properties = { tag = tags[1][6] } },
+    -- Set Zeal to always maps on tags number 6 of last screen
+    { rule = { class = "Python2", name = "RIDE" },
+      properties = { tag = tags[screen.count()][6] } },
 }
