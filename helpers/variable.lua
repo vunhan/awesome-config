@@ -16,6 +16,7 @@ else
 end
 screenshot      = "scrot"
 file_manager    = "nautilus"
+browser         = "firefox"
 editor          = os.getenv("EDITOR") or "vim"
 editor_cmd      = terminal .. " -e " .. editor
 terminal_cmd    = terminal .. " -g 130x34-320+16 -e "
@@ -70,4 +71,10 @@ mypromptbox   = {}
 mylayoutbox   = {}
 mytaglist     = {}
 mytasklist    = {}
+-- }}}
+
+-- {{{ Default config for notify
+local naughty = require('naughty')
+naughty.config.defaults.timeout = 10
+naughty.config.defaults.screen = screen.count()
 -- }}}

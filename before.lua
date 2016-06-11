@@ -8,7 +8,7 @@ run_once("franz")
 -- }}}
 
 -- {{{ Web Browser
-run_once("firefox")
+run_once(browser)
 run_once("chromium")
 -- }}}
 
@@ -22,7 +22,7 @@ run_once("uim-systray")
 
 -- {{{ Urxvt
 run_once("urxvtd", "-o -q -f")
-run_once("urxvtc", tmux, "tmux")
+run_once(terminal, tmux, "tmux")
 -- }}}
 
 -- {{{ Mpd
