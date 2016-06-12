@@ -3,18 +3,16 @@
 local naughty = require("naughty")
 -- Lua to HTML library
 local html = require("html")
--- Vicious library
-local vicious = require("vicious")
+-- Wibox library
 local wibox = require("wibox")
 
 -- {{{ Calculation
 dynamo.calculate = function ()
-    prompt.text:set_markup(html(beautiful.fg_command ," Máy tính"))
-    vicious.unregister(prompt.text)
+    dynamo.prompt(" Máy tính")
     awful.prompt.run({ prompt = "" },
                      mypromptbox[mouse.screen].widget,
                      function (expr) -- Execute callback
-                         vicious.register(prompt.text, vicious.widgets.os, html(beautiful.fg_command, " $3@$4"))
+                         dynamo.prompt()
                          local result = awful.util.eval("return (" .. trim(expr) .. ")")
                          naughty.notify({ text = html(beautiful.fg_focus, expr .. " = " .. result), timeout = 10, screen = mouse.screen })
                      end,
@@ -22,7 +20,7 @@ dynamo.calculate = function ()
                      awful.util.getdir("cache") .. "/history_calc",
                      nil,
                      function (expr) -- Done callback
-                         vicious.register(prompt.text, vicious.widgets.os, html(beautiful.fg_command, " $3@$4"))
+                         dynamo.prompt()
                      end)
 end
 -- }}}
@@ -44,6 +42,34 @@ dynamo.touchpad_toggle = function()
     else
         naughty.notify({ text = "Bật touchpad", timeout = 1, screen = mouse.screen })
         touchpad_state = 1
+    end
+end
+-- }}}
+
+-- {{{ Show properties of windows
+dynamo.xprop = function()
+    dynamo.prompt(" Thuộc tính cửa sổ")
+    if not mousegrabber.isrunning() then
+        mousegrabber.run(function(_mouse)
+            for k, v in ipairs(_mouse.buttons) do
+                if v then
+                    local c = client.focus
+                    local result = {
+                        name = c.name,
+                        class = c.class,
+                        instance = c.instance,
+                        type = c.type,
+                        window = c.window,
+                        role = c.role,
+                        pid = c.pid,
+                    }
+                    dbg(result, true)
+                    dynamo.prompt()
+                    return false
+                end
+            end
+            return true
+        end, "target")
     end
 end
 -- }}}
@@ -97,7 +123,7 @@ dynamo.popup = function(widget, callback, args)
         else -- Table is normal array
             result = callback
         end
-    else
+    elseif type(callback) == "string" or type(callback) == "number" then
         result = callback
     end
     widget:connect_signal("mouse::enter", function() show_popup(is_widget, result) end)
