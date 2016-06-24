@@ -13,11 +13,11 @@ awful.rules.rules = {
     -- Set urxvt transparent
     { rule = { class = "urxvt" },
       properties = { opacity = 0.1 } },
-    -- Set Firefox to always map on tags number 7 of last screen
+    -- Set Firefox to always map on tags number 2 of last screen
     { rule = { class = "Firefox" },
-      properties = { tag = tags[screen.count()][7] } },
-    { rule = { class = "chromium" },
       properties = { tag = tags[screen.count()][2] } },
+    { rule = { class = "chromium" },
+      properties = { tag = tags[screen.count()][3] } },
     -- Plugin of firefox must be floating window
     { rule = { instance = "plugin-container" },
       properties = { floating = true } },
@@ -30,28 +30,28 @@ awful.rules.rules = {
     -- Set Steam to always map on tags number 7 of first screen
     { rule = { class = "Steam" },
       properties = { tag = tags[1][7] } },
-    -- Set Zim to always map on tags number 5 of last screen
+    -- Set Zim to always map on tags number 6 of last screen
     { rule = { class = "Zim" },
-      properties = { tag = tags[screen.count()][5] } },
+      properties = { tag = tags[screen.count()][6] } },
     -- Set Desktop of Gnome must be share all workspace
     { rule = { class = "Nautilus", instance = "desktop_window" },
       properties = { sticky = true } },
-    -- Set File manager of Gnome to always map on tags number 4 of last screen
+    -- Set File manager of Gnome to always map on tags number 5 of last screen
     { rule = { class = "Nautilus", instance = "nautilus" },
-      properties = { tag = tags[screen.count()][4] } },
+      properties = { tag = tags[screen.count()][5] } },
     -- feh must be floating window
     { rule = { class = "feh" },
       properties = { floating = true } },
-    -- Set WPS Office to always map on tags number 3 of last screen
+    -- Set WPS Office to always map on tags number 4 of last screen
     { rule = { class = "Et" },
-      properties = { tag = tags[screen.count()][3] } },
+      properties = { tag = tags[screen.count()][4] } },
     -- Set Franz to always maps on tags number 5 of first screen
     { rule = { class = "Franz" },
       properties = { tag = tags[1][5] } },
     -- Set Zeal to always maps on tags number 6 of first screen
     { rule = { class = "Zeal" },
       properties = { tag = tags[1][6] } },
-    -- Set Zeal to always maps on tags number 6 of last screen
+    -- Set Zeal to always maps on tags number 7 of last screen
     { rule = { class = "Python2", name = "RIDE" },
-      properties = { tag = tags[screen.count()][6] } },
+      properties = { tag = tags[screen.count()][7] } },
 }
