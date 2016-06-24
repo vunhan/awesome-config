@@ -13,9 +13,9 @@ awful.rules.rules = {
     -- Set urxvt transparent
     { rule = { class = "urxvt" },
       properties = { opacity = 0.1 } },
-    -- Set Firefox to always map on tags number 2 of last screen
+    -- Set Firefox to always map on tags number 7 of last screen
     { rule = { class = "Firefox" },
-      properties = { tag = tags[1][2] } },
+      properties = { tag = tags[screen.count()][7] } },
     { rule = { class = "chromium" },
       properties = { tag = tags[screen.count()][2] } },
     -- Plugin of firefox must be floating window
